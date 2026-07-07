@@ -235,6 +235,36 @@
     margin: 0 0 16px;
 }
 
+.flip-card {
+    position: relative;
+}
+
+.bookmark-toggle {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.bookmark-toggle:hover {
+    background: rgba(255, 255, 255, 0.28);
+}
+
+.bookmark-toggle.active {
+    color: #fbbf24;
+}
+
 @media (max-width: 480px) {
     .flip-card {
         height: 280px;

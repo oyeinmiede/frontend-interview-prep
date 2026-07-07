@@ -1,7 +1,9 @@
 import { useState, useMemo } from 'react';
-import { Shuffle, RotateCcw } from 'lucide-react';
+import { Shuffle, RotateCcw, Bookmark } from 'lucide-react';
 import { flashcards } from '../data/flashcards';
 import { useFlashcards } from '../hooks/useFlashcards';
+import { useBookmarks } from '../hooks/useBookmarks';
+import FlipCard from '../components/FlipCard';
 import './Flashcards.css';
 
 const CATEGORIES = [
@@ -21,6 +23,7 @@ const RATINGS = [
 
 export default function Flashcards() {
   const { getDueCards, rateCard, stats } = useFlashcards();
+  const { isBookmarked, toggleBookmark } = useBookmarks();
   const [category, setCategory] = useState('all');
   const [includeAll, setIncludeAll] = useState(false);
   const [index, setIndex] = useState(0);
@@ -84,19 +87,15 @@ export default function Flashcards() {
         <>
           <div className="card-progress">Card {index + 1} of {deck.length}</div>
 
-          <div className={`flip-card ${flipped ? 'flipped' : ''}`} data-category={card.category} onClick={handleFlip}>
-            <div className="flip-card-inner">
-              <div className="flip-card-face flip-card-front">
-                <span className="card-topic">{card.topic}</span>
-                <p className="card-text">{card.question}</p>
-                <span className="flip-hint">Tap to reveal answer</span>
-              </div>
-              <div className="flip-card-face flip-card-back">
-                <span className="card-topic">{card.topic}</span>
-                <p className="card-text">{card.answer}</p>
-              </div>
-            </div>
-          </div>
+          <FlipCard card={card} flipped={flipped} onFlip={handleFlip}>
+            <button
+              className={`bookmark-toggle ${isBookmarked(card.id) ? 'active' : ''}`}
+              onClick={e => { e.stopPropagation(); toggleBookmark(card.id); }}
+              title={isBookmarked(card.id) ? 'Remove bookmark' : 'Bookmark this card'}
+            >
+              <Bookmark size={16} fill={isBookmarked(card.id) ? 'currentColor' : 'none'} />
+            </button>
+          </FlipCard>
 
           <div className="card-controls">
             <button className="btn-icon" onClick={handleShuffle} title="Shuffle">
