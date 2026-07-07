@@ -353,61 +353,136 @@ export const flashcards = [
         question: 'What is the difference between a session-based and token-based (JWT) auth flow?',
         answer: 'Session-based: server stores session state and the client holds a session ID cookie; the server looks up state on each request. Token-based: the server issues a signed JWT containing claims; the client sends it each request and the server verifies it statelessly without a lookup.'
     },
-    { 
-        id: 'xss-1', 
-        category: 'security', 
-        topic: 'XSS / CSRF / CORS', 
-        question: 'What is XSS and how do frameworks like React mitigate it by default?', 
-        answer: 'Cross-Site Scripting: injecting malicious script into a page, often via unsanitized user input rendered as HTML. React escapes values rendered in JSX by default, preventing raw HTML injection unless you explicitly use dangerouslySetInnerHTML.' 
+    {
+        id: 'xss-1',
+        category: 'security',
+        topic: 'XSS / CSRF / CORS',
+        question: 'What is XSS and how do frameworks like React mitigate it by default?',
+        answer: 'Cross-Site Scripting: injecting malicious script into a page, often via unsanitized user input rendered as HTML. React escapes values rendered in JSX by default, preventing raw HTML injection unless you explicitly use dangerouslySetInnerHTML.'
     },
-    { 
-        id: 'xss-2', 
-        category: 'security', 
-        topic: 'XSS / CSRF / CORS', 
-        question: 'What is CORS and why does it exist?', 
-        answer: 'Cross-Origin Resource Sharing is a browser security mechanism that restricts web pages from making requests to a different origin than the one that served the page, unless the server explicitly allows it via response headers. It protects users from malicious cross-origin requests using their credentials.' 
+    {
+        id: 'xss-2',
+        category: 'security',
+        topic: 'XSS / CSRF / CORS',
+        question: 'What is CORS and why does it exist?',
+        answer: 'Cross-Origin Resource Sharing is a browser security mechanism that restricts web pages from making requests to a different origin than the one that served the page, unless the server explicitly allows it via response headers. It protects users from malicious cross-origin requests using their credentials.'
     },
-    { 
-        id: 'a11y-1', 
-        category: 'security', 
-        topic: 'Accessibility', 
-        question: 'What is the purpose of ARIA attributes, and when should you avoid them?', 
-        answer: 'ARIA attributes (e.g. aria-label, role) convey semantics to assistive technology when native HTML can\'t express it. The rule of thumb: prefer native semantic elements first — "no ARIA is better than bad ARIA," since incorrect ARIA can make accessibility worse.' 
+    {
+        id: 'a11y-1',
+        category: 'security',
+        topic: 'Accessibility',
+        question: 'What is the purpose of ARIA attributes, and when should you avoid them?',
+        answer: 'ARIA attributes (e.g. aria-label, role) convey semantics to assistive technology when native HTML can\'t express it. The rule of thumb: prefer native semantic elements first — "no ARIA is better than bad ARIA," since incorrect ARIA can make accessibility worse.'
     },
-    { 
-        id: 'a11y-2', 
-        category: 'security', 
-        topic: 'Accessibility', 
-        question: 'What does keyboard accessibility require at minimum?', 
-        answer: 'All interactive elements must be reachable and operable via Tab/Enter/Space without a mouse, with a visible focus indicator, and in a logical tab order matching the visual layout.' 
+    {
+        id: 'a11y-2',
+        category: 'security',
+        topic: 'Accessibility',
+        question: 'What does keyboard accessibility require at minimum?',
+        answer: 'All interactive elements must be reachable and operable via Tab/Enter/Space without a mouse, with a visible focus indicator, and in a logical tab order matching the visual layout.'
     },
     // Day-to-Day
-    { 
-        id: 'git-1', 
-        category: 'workflow', 
-        topic: 'Git Workflows', 
-        question: 'What is the difference between git merge and git rebase?', 
-        answer: 'Merge creates a new commit joining two histories, preserving branch history as-is. Rebase replays your branch\'s commits on top of another branch, producing a linear history but rewriting commit hashes — riskier on shared/public branches.' 
+    {
+        id: 'git-1',
+        category: 'workflow',
+        topic: 'Git Workflows',
+        question: 'What is the difference between git merge and git rebase?',
+        answer: 'Merge creates a new commit joining two histories, preserving branch history as-is. Rebase replays your branch\'s commits on top of another branch, producing a linear history but rewriting commit hashes — riskier on shared/public branches.'
     },
-    { 
-        id: 'git-2', 
-        category: 'workflow', 
-        topic: 'Git Workflows', 
-        question: 'What is a typical feature-branch workflow?', 
-        answer: 'Branch off main for each feature/fix, commit incrementally, open a pull request for review, then merge (often squash-merge) back into main once approved and CI passes, keeping main always deployable.' 
+    {
+        id: 'git-2',
+        category: 'workflow',
+        topic: 'Git Workflows',
+        question: 'What is a typical feature-branch workflow?',
+        answer: 'Branch off main for each feature/fix, commit incrementally, open a pull request for review, then merge (often squash-merge) back into main once approved and CI passes, keeping main always deployable.'
     },
-    { 
-        id: 'test-1', 
-        category: 'workflow', 
-        topic: 'Testing Awareness', 
-        question: 'What is the difference between unit, integration, and end-to-end tests?', 
-        answer: 'Unit tests check a single function/component in isolation. Integration tests check how multiple units work together (e.g. a component with its hooks). E2E tests simulate real user flows across the whole app, often in a browser.' 
+    {
+        id: 'test-1',
+        category: 'workflow',
+        topic: 'Testing Awareness',
+        question: 'What is the difference between unit, integration, and end-to-end tests?',
+        answer: 'Unit tests check a single function/component in isolation. Integration tests check how multiple units work together (e.g. a component with its hooks). E2E tests simulate real user flows across the whole app, often in a browser.'
     },
-    { 
-        id: 'test-2', 
-        category: 'workflow', 
-        topic: 'Testing Awareness', 
-        question: 'Why does React Testing Library encourage testing behavior over implementation?', 
-        answer: 'It queries the DOM the way a user would (by text, role, label) rather than component internals, so tests stay valid through refactors and actually verify what users experience, not incidental implementation details.' 
+    {
+        id: 'test-2',
+        category: 'workflow',
+        topic: 'Testing Awareness',
+        question: 'Why does React Testing Library encourage testing behavior over implementation?',
+        answer: 'It queries the DOM the way a user would (by text, role, label) rather than component internals, so tests stay valid through refactors and actually verify what users experience, not incidental implementation details.'
     },
+    // additional expanded questions (80 new items)
+    { id: 'q-html-forms-2', category: 'core', topic: 'HTML Semantics', question: 'Which attribute makes an input required for form submission?', options: ['required', 'validate', 'must', 'needed'], correctIndex: 0, relatedCardId: 'html-sem-7' },
+    { id: 'q-html-link-rel', category: 'core', topic: 'HTML Semantics', question: 'Which rel value indicates a stylesheet link?', options: ['stylesheet', 'icon', 'preload', 'module'], correctIndex: 0, relatedCardId: 'html-sem-8' },
+    { id: 'q-css-specificity-7', category: 'core', topic: 'CSS Specificity', question: 'Which selector is least specific?', options: ['#id', '.class', 'element', '[attr]'], correctIndex: 2, relatedCardId: 'css-spec-7' },
+    { id: 'q-css-cascade', category: 'core', topic: 'CSS Specificity', question: 'What determines which CSS rule applies when selectors conflict?', options: ['Cascade order, specificity, importance', 'Only source order', 'Only specificity', 'Only !important'], correctIndex: 0, relatedCardId: 'css-spec-8' },
+    { id: 'q-flexbox-gap', category: 'core', topic: 'Flexbox', question: 'Which property adds spacing between flex items?', options: ['gap', 'margin', 'padding', 'space-between'], correctIndex: 0, relatedCardId: 'flexbox-7' },
+    { id: 'q-flexbox-align-self', category: 'core', topic: 'Flexbox', question: 'What does align-self do?', options: ['Override align-items for a single item', 'Change main axis', 'Set flex-basis', 'Control wrapping'], correctIndex: 0, relatedCardId: 'flexbox-8' },
+    { id: 'q-grid-named-areas', category: 'core', topic: 'CSS Grid', question: 'What are named grid areas used for?', options: ['Referencing layout regions by name', 'Styling text', 'Animating grid', 'Replacing flexbox'], correctIndex: 0, relatedCardId: 'grid-7' },
+    { id: 'q-grid-fr-usage', category: 'core', topic: 'CSS Grid', question: 'When is using fr units appropriate?', options: ['Distributing remaining space proportionally', 'Setting fixed pixel sizes', 'For fonts only', 'For images only'], correctIndex: 0, relatedCardId: 'grid-8' },
+    { id: 'q-responsive-images-2', category: 'core', topic: 'Responsive Design', question: 'What attribute provides alternative image sources for different resolutions?', options: ['srcset', 'alt', 'sizes', 'picture'], correctIndex: 0, relatedCardId: 'resp-7' },
+    { id: 'q-responsive-meta', category: 'core', topic: 'Responsive Design', question: 'Which meta tag is essential for responsive layouts on mobile?', options: ['viewport', 'charset', 'description', 'robots'], correctIndex: 0, relatedCardId: 'resp-8' },
+    { id: 'q-dom-query', category: 'core', topic: 'DOM', question: 'Which returns a live HTMLCollection?', options: ['getElementsByClassName', 'querySelectorAll', 'querySelector', 'getElementById'], correctIndex: 0, relatedCardId: 'dom-7' },
+    { id: 'q-dom-append', category: 'core', topic: 'DOM', question: 'Which method appends a node as the last child?', options: ['appendChild', 'insertBefore', 'replaceChild', 'removeChild'], correctIndex: 0, relatedCardId: 'dom-8' },
+    { id: 'q-vdom-key-importance', category: 'core', topic: 'Virtual DOM', question: 'Why are keys important in lists?', options: ['Help React match elements between renders', 'Improve CSS specificity', 'Reduce bundle size', 'Enable server rendering'], correctIndex: 0, relatedCardId: 'vdom-5' },
+    { id: 'q-vdom-reconciliation', category: 'core', topic: 'Virtual DOM', question: 'What is reconciliation in React?', options: ['Comparing virtual trees and updating DOM', 'Building CSS', 'Bundling assets', 'Server rendering'], correctIndex: 0, relatedCardId: 'vdom-6' },
+    { id: 'q-eventloop-timers', category: 'core', topic: 'Event Loop', question: 'Which API schedules a callback after a delay?', options: ['setTimeout', 'requestAnimationFrame', 'Promise.resolve', 'setImmediate'], correctIndex: 0, relatedCardId: 'evloop-5' },
+    { id: 'q-eventloop-microtask', category: 'core', topic: 'Event Loop', question: 'Which queue has priority: microtask or macrotask?', options: ['Microtask', 'Macrotask', 'They are equal', 'Depends on browser'], correctIndex: 0, relatedCardId: 'evloop-6' },
+    { id: 'q-closures-memory-2', category: 'core', topic: 'Closures', question: 'How can closures lead to unexpected memory retention?', options: ['By holding references to outer scope variables', 'By freeing memory automatically', 'By using let only', 'By using strict mode'], correctIndex: 0, relatedCardId: 'closures-5' },
+    { id: 'q-hoisting-let', category: 'core', topic: 'Hoisting', question: 'Accessing let before declaration causes:', options: ['ReferenceError', 'undefined', 'null', '0'], correctIndex: 0, relatedCardId: 'hoisting-5' },
+    { id: 'q-promises-chaining-2', category: 'core', topic: 'Promises', question: 'How do you chain promises to run sequentially?', options: ['return promise.then(()=>next())', 'Use multiple setTimeouts', 'Use synchronous loops', 'Use callbacks only'], correctIndex: 0, relatedCardId: 'promises-5' },
+    { id: 'q-async-await-best', category: 'core', topic: 'Async/Await', question: 'Why prefer try/catch with await?', options: ['To handle rejections cleanly', 'To speed up code', 'To avoid promises', 'To block the thread'], correctIndex: 0, relatedCardId: 'async-5' },
+    { id: 'q-bubbling-stop-2', category: 'core', topic: 'Event Bubbling & Capturing', question: 'Which method prevents default browser behavior?', options: ['event.preventDefault()', 'event.stopPropagation()', 'event.stopImmediatePropagation()', 'return false'], correctIndex: 0, relatedCardId: 'bubble-5' },
+
+    /* React additional */
+    { id: 'q-react-state-hook', category: 'react', topic: 'React Hooks', question: 'What does useState return?', options: ['A state value and setter function', 'Only a state value', 'Only a setter', 'A promise'], correctIndex: 0, relatedCardId: 'hooks-5' },
+    { id: 'q-react-effect-deps-2', category: 'react', topic: 'React Lifecycle', question: 'Why include dependencies in useEffect?', options: ['To re-run effect when they change', 'To prevent effect from running', 'To memoize effect', 'To delay effect'], correctIndex: 0, relatedCardId: 'lifecycle-6' },
+    { id: 'q-react-key-prop', category: 'react', topic: 'React Lifecycle', question: 'Where should keys be placed in lists?', options: ['On the list item component', 'On the parent container', 'On the fragment only', 'On the CSS class'], correctIndex: 0, relatedCardId: 'lifecycle-7' },
+    { id: 'q-react-props-defaults', category: 'react', topic: 'State vs Props', question: 'How to provide default props for a function component?', options: ['Use default parameters or defaultProps', 'Use propTypes only', 'Use global variables', 'Use inline styles'], correctIndex: 0, relatedCardId: 'stateprops-5' },
+    { id: 'q-react-context-performance-2', category: 'react', topic: 'Context API', question: 'How to avoid unnecessary re-renders with context?', options: ['Memoize provider value', 'Never update context', 'Use global variables', 'Use inline objects'], correctIndex: 0, relatedCardId: 'context-5' },
+    { id: 'q-react-memo-when', category: 'react', topic: 'Memoization', question: 'What should you measure before adding memoization?', options: ['Render cost and prop stability', 'Bundle size only', 'Number of components', 'CSS complexity'], correctIndex: 0, relatedCardId: 'memo-5' },
+
+    /* Performance & Architecture additional */
+    { id: 'q-debounce-params', category: 'perf', topic: 'Debouncing vs Throttling', question: 'Which parameter controls debounce delay?', options: ['timeout/delay', 'interval', 'frequency', 'rate'], correctIndex: 0, relatedCardId: 'debounce-5' },
+    { id: 'q-throttle-impl', category: 'perf', topic: 'Debouncing vs Throttling', question: 'Throttling ensures a function runs at most:', options: ['Once per interval', 'Only once', 'Every event', 'Never'], correctIndex: 0, relatedCardId: 'debounce-6' },
+    { id: 'q-ssg-usecase', category: 'perf', topic: 'SSR vs CSR vs SSG', question: 'SSG is best for pages that:', options: ['Are mostly static and cacheable', 'Require per-user data on first load', 'Need real-time updates', 'Are admin dashboards'], correctIndex: 0, relatedCardId: 'ssr-5' },
+    { id: 'q-ssr-cache', category: 'perf', topic: 'SSR vs CSR vs SSG', question: 'How can SSR responses be cached?', options: ['Using CDN or server-side caching', 'By disabling cache', 'Only client-side caching', 'Using localStorage'], correctIndex: 0, relatedCardId: 'ssr-6' },
+    { id: 'q-hydration-practices', category: 'perf', topic: 'Hydration', question: 'Which practice reduces hydration mismatch risk?', options: ['Avoid non-deterministic values in render', 'Use random in render', 'Use Date.now in JSX', 'Access window during SSR'], correctIndex: 0, relatedCardId: 'hydration-5' },
+    { id: 'q-codesplit-adv', category: 'perf', topic: 'Code Splitting', question: 'What is a benefit of code splitting for mobile users?', options: ['Smaller initial download', 'More CPU usage', 'Slower navigation', 'Larger bundles'], correctIndex: 0, relatedCardId: 'codesplit-5' },
+    { id: 'q-lazy-fonts', category: 'perf', topic: 'Lazy Loading', question: 'How to defer webfont loading to improve LCP?', options: ['Use font-display: swap', 'Preload fonts only', 'Inline fonts always', 'Avoid fonts'], correctIndex: 0, relatedCardId: 'lazy-5' },
+    { id: 'q-webperf-cdn', category: 'perf', topic: 'Web Performance', question: 'Using a CDN primarily helps by:', options: ['Serving assets from edge locations closer to users', 'Reducing CSS size', 'Replacing JS', 'Improving local dev'], correctIndex: 0, relatedCardId: 'webperf-5' },
+
+    /* Security & A11y additional */
+    { id: 'q-auth-refresh', category: 'security', topic: 'Authentication Basics', question: 'What is a refresh token used for?', options: ['Obtain new access tokens without re-authenticating user', 'Encrypt data', 'Store user preferences', 'Replace cookies'], correctIndex: 0, relatedCardId: 'auth-5' },
+    { id: 'q-auth-storage', category: 'security', topic: 'Authentication Basics', question: 'Why avoid storing JWTs in localStorage?', options: ['Susceptible to XSS; prefer httpOnly cookies for sensitive tokens', 'LocalStorage is too slow', 'LocalStorage is not supported', 'It breaks CSS'], correctIndex: 0, relatedCardId: 'auth-6' },
+    { id: 'q-xss-sanitization', category: 'security', topic: 'XSS / CSRF / CORS', question: 'Which is a server-side mitigation for XSS?', options: ['Sanitize user input before rendering', 'Use client-side only checks', 'Disable JS', 'Use inline styles'], correctIndex: 0, relatedCardId: 'xss-8' },
+    { id: 'q-csrf-mitigation', category: 'security', topic: 'XSS / CSRF / CORS', question: 'A common CSRF mitigation is:', options: ['Use SameSite cookies or CSRF tokens', 'Use GET for state changes', 'Disable cookies', 'Use localStorage only'], correctIndex: 0, relatedCardId: 'xss-9' },
+    { id: 'q-a11y-semantics', category: 'security', topic: 'Accessibility', question: 'Which element improves accessibility for navigation?', options: ['nav', 'div', 'span', 'b'], correctIndex: 0, relatedCardId: 'a11y-5' },
+    { id: 'q-a11y-forms', category: 'security', topic: 'Accessibility', question: 'Which attribute associates a label with an input?', options: ['for (htmlFor in React)', 'aria-label', 'data-id', 'role'], correctIndex: 0, relatedCardId: 'a11y-6' },
+
+    /* Day-to-Day additional */
+    { id: 'q-git-branching-2', category: 'workflow', topic: 'Git Workflows', question: 'What is trunk-based development?', options: ['Short-lived feature branches merged frequently to trunk', 'Long-lived branches only', 'No branching', 'Only tags'], correctIndex: 0, relatedCardId: 'git-8' },
+    { id: 'q-git-revert', category: 'workflow', topic: 'Git Workflows', question: 'How to undo a commit without rewriting history?', options: ['git revert', 'git reset --hard', 'git rebase -i', 'git push --force'], correctIndex: 0, relatedCardId: 'git-9' },
+    { id: 'q-ci-cd', category: 'workflow', topic: 'Git Workflows', question: 'What does CD stand for in CI/CD?', options: ['Continuous Delivery or Continuous Deployment', 'Code Delivery', 'Commit Deployment', 'Continuous Debugging'], correctIndex: 0, relatedCardId: 'git-10' },
+    { id: 'q-testing-types', category: 'workflow', topic: 'Testing Awareness', question: 'Which test type is fastest to run locally?', options: ['Unit tests', 'E2E tests', 'Manual tests', 'Integration tests'], correctIndex: 0, relatedCardId: 'test-8' },
+    { id: 'q-testing-mocks-2', category: 'workflow', topic: 'Testing Awareness', question: 'Why use mocks in unit tests?', options: ['Isolate the unit by replacing external dependencies', 'Make tests slower', 'Remove assertions', 'Only for UI'], correctIndex: 0, relatedCardId: 'test-9' },
+    { id: 'q-testing-flaky', category: 'workflow', topic: 'Testing Awareness', question: 'A flaky test is one that:', options: ['Sometimes passes and sometimes fails without code changes', 'Always passes', 'Always fails', 'Is skipped'], correctIndex: 0, relatedCardId: 'test-10' },
+
+    /* More Core Web & JS */
+    { id: 'q-html-accessible-links', category: 'core', topic: 'HTML Semantics', question: 'Which attribute makes a link open in a new tab safely?', options: ['rel="noopener noreferrer" target="_blank"', 'target="_self"', 'rel="nofollow"', 'download'], correctIndex: 0, relatedCardId: 'html-sem-9' },
+    { id: 'q-css-media-queries', category: 'core', topic: 'Responsive Design', question: 'Which media query targets screens wider than 768px?', options: ['@media (min-width: 768px)', '@media (max-width: 768px)', '@media (width: 768px)', '@media (device-width: 768px)'], correctIndex: 0, relatedCardId: 'resp-9' },
+    { id: 'q-dom-clone', category: 'core', topic: 'DOM', question: 'Which method clones a node including its children?', options: ['cloneNode(true)', 'cloneNode(false)', 'copyNode', 'duplicateNode'], correctIndex: 0, relatedCardId: 'dom-9' },
+    { id: 'q-eventloop-async', category: 'core', topic: 'Event Loop', question: 'Which API schedules a microtask?', options: ['Promise.resolve().then(...)', 'setTimeout', 'requestAnimationFrame', 'setInterval'], correctIndex: 0, relatedCardId: 'evloop-7' },
+    { id: 'q-closures-currying', category: 'core', topic: 'Closures', question: 'Currying often uses closures to:', options: ['Preserve arguments for later invocation', 'Modify DOM', 'Change CSS', 'Optimize images'], correctIndex: 0, relatedCardId: 'closures-6' },
+    { id: 'q-promises-error', category: 'core', topic: 'Promises', question: 'How to handle errors in a promise chain?', options: ['Use .catch at the end of the chain', 'Use try/catch only', 'Ignore errors', 'Use finally only'], correctIndex: 0, relatedCardId: 'promises-6' },
+    { id: 'q-async-await-timeouts', category: 'core', topic: 'Async/Await', question: 'How to add a timeout to an awaitable promise?', options: ['Race the promise with a timeout promise', 'Use setTimeout only', 'Use synchronous loops', 'Use try/catch only'], correctIndex: 0, relatedCardId: 'async-6' },
+
+    /* Final batch to reach ~80 new items */
+    { id: 'q-react-error-boundaries', category: 'react', topic: 'React Lifecycle', question: 'What do error boundaries catch?', options: ['Errors during rendering, lifecycle methods, and constructors in child components', 'All runtime errors globally', 'Network errors only', 'CSS errors'], correctIndex: 0, relatedCardId: 'lifecycle-8' },
+    { id: 'q-react-suspense', category: 'react', topic: 'React Lifecycle', question: 'What is Suspense used for?', options: ['Waiting for lazy-loaded components or data to be ready', 'Handling errors', 'Styling components', 'Managing state'], correctIndex: 0, relatedCardId: 'lifecycle-9' },
+    { id: 'q-perf-lighthouse', category: 'perf', topic: 'Web Performance', question: 'What tool provides audits for performance, accessibility, and best practices?', options: ['Lighthouse', 'Webpack', 'ESLint', 'Prettier'], correctIndex: 0, relatedCardId: 'webperf-6' },
+    { id: 'q-security-headers', category: 'security', topic: 'XSS / CSRF / CORS', question: 'Which header helps mitigate XSS by restricting sources for scripts?', options: ['Content-Security-Policy', 'X-Content-Type-Options', 'X-Frame-Options', 'Referrer-Policy'], correctIndex: 0, relatedCardId: 'xss-10' },
+    { id: 'q-a11y-aria-live', category: 'security', topic: 'Accessibility', question: 'aria-live is used to:', options: ['Announce dynamic content changes to screen readers', 'Style elements', 'Hide content', 'Improve SEO'], correctIndex: 0, relatedCardId: 'a11y-7' },
+    { id: 'q-git-code-review', category: 'workflow', topic: 'Git Workflows', question: 'A constructive code review should:', options: ['Explain why changes are suggested and offer alternatives', 'Only point out problems', 'Reject PRs without comment', 'Merge immediately'], correctIndex: 0, relatedCardId: 'git-11' },
+    { id: 'q-testing-contract', category: 'workflow', topic: 'Testing Awareness', question: 'What is a contract test?', options: ['Verifies interactions between services match agreed contracts', 'Tests UI only', 'Replaces unit tests', 'Only for databases'], correctIndex: 0, relatedCardId: 'test-11' },
+    { id: 'q-performance-image', category: 'perf', topic: 'Web Performance', question: 'Which image format often provides best compression for photos?', options: ['WebP', 'PNG', 'BMP', 'GIF'], correctIndex: 0, relatedCardId: 'webperf-7' }
 ];     
