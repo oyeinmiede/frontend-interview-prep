@@ -101,6 +101,10 @@ export default function Dashboard() {
           ))}
         </div>
       </div>
+
+      <a href="https://slopdar.com/r/fd-prepdeck.vercel.app">
+        <img src="https://slopdar.com/badge/fd-prepdeck.vercel.app.svg" alt="Slopdar score" height="28" />
+      </a>
     </div>
   )
 }
