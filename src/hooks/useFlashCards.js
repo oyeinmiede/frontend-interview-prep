@@ -23,7 +23,7 @@ function addDays(date, days) {
     return d.toISOString();
 }
 
-export function useFlashcards() {
+export function useFlashCards() {
     const [progress, setProgress] = useState(loadProgress);
 
     useEffect(() => { saveProgress(progress); }, [progress]);
