@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react';
 import { Bookmark, ArrowRight } from 'lucide-react';
 import { flashcards } from '../data/flashcards';
 import { useBookmarks } from '../hooks/useBookmarks';
-import { useFlashcards } from '../hooks/useFlashCards';
+import { useFlashCards } from '../hooks/useFlashCards';
 import FlipCard from '../components/FlipCard';
 import './Bookmarks.css';
 
@@ -13,7 +13,7 @@ const CATEGORY_LABELS = {
 
 export default function Bookmarks() {
     const { bookmarkedIds, removeBookmark } = useBookmarks();
-    const { rateCard } = useFlashcards();
+    const { rateCard } = useFlashCards();
     const [reviewMode, setReviewMode] = useState(false);
     const [index, setIndex] = useState(0);
     const [flipped, setFlipped] = useState(false);

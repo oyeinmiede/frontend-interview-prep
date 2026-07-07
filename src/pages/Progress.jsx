@@ -1,12 +1,12 @@
 import { useMemo } from 'react'
 import { TrendingUp, Award, Flame, ListChecks } from 'lucide-react'
-import { useFlashcards } from '../hooks/useFlashCards'
+import { useFlashCards } from '../hooks/useFlashCards'
 import { useQuizHistory } from '../hooks/useQuizHistory'
 import { getBoxDistribution, getCategoryBreakdown, getStreak } from '../utils/progressStats'
 import './Progress.css'
 
 export default function Progress() {
-  const { getCardState, stats: cardStats } = useFlashcards()
+  const { getCardState, stats: cardStats } = useFlashCards()
   const { history, stats: quizStats } = useQuizHistory()
 
   const boxDistribution = useMemo(() => getBoxDistribution(getCardState), [getCardState])

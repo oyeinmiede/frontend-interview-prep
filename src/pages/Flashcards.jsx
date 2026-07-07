@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import { Shuffle, RotateCcw, Bookmark } from 'lucide-react';
 import { flashcards } from '../data/flashcards';
-import { useFlashcards } from '../hooks/useFlashCards';
+import { useFlashCards } from '../hooks/useFlashCards';
 import { useBookmarks } from '../hooks/useBookmarks';
 import FlipCard from '../components/FlipCard';
 import './Flashcards.css';
@@ -22,7 +22,7 @@ const RATINGS = [
 ];
 
 export default function Flashcards() {
-  const { getDueCards, rateCard, stats } = useFlashcards();
+  const { getDueCards, rateCard, stats } = useFlashCards();
   const { isBookmarked, toggleBookmark } = useBookmarks();
   const [category, setCategory] = useState('all');
   const [includeAll, setIncludeAll] = useState(false);
