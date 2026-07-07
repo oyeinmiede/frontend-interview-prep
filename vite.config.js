@@ -9,7 +9,8 @@ export default defineConfig({
       '@hooks': '/src/hooks',
     },
   },
-  build: {
-    chunkSizeWarningLimit: 600,
-  },
+  build: { outDir: 'dist' },
+  server: {
+    historyApiFallback: true
+  }
 })
